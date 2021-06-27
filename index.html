@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>나의 첫 웹 페이지!</title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <link rel="icon" href="favicon.svg" type="image/x-icon">
+    </head>
+    <body align="center">
+        <script>
+        function go_calculator(){location.href="calculator/"}
+        </script>
+        <h1>이곳은 나의 첫 번째 웹사이트입니다!</h1>
+        <p style="color: blue;"><strong>링크가 제대로 열리지 않으면 연락해 주세요!</strong><br>이메일 주소: joonhee0908@naver.com</p>
+        <p style="color: blue;"><span id="web">아래는 내가 좋아하는 웹사이트입니다.</span>
+        <div id="website">
+            <ul>
+                <li><a href="https://www.youtube.com/" target="_blank">유튜브</a></li>
+                <li><a href="https://www.naver.com/" target="_blank">네이버</a></li>
+                <li><a href="http://www.tcpschool.com/html/intro" target="_blank">내가 html을 공부하는 곳</a></li>
+            </ul>
+        </div>
+        <iframe id = "star" src="https://scratch.mit.edu/projects/335834820/embed" allowtransparency="true" width = "485px" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+        <p></p>
+        <p class="des">위는 내가 <a href="https://scratch.mit.edu/" target="_blank" style="color: blue;">스크래치</a>로 만든 <br><mark>별</mark> 만드는 작품이에요!</p>
+        <p></p>
+        <iframe class="media" id="guitar" width="560" height="315" src="https://www.youtube.com/embed/mFgz-E2hp00?controls=0&amp;start=19" allowfullscreen></iframe>
+        <p></p>
+        <p class=des>내가 연주한 <mark>기타</mark> 영상이에요!</p>
+        <img src = "https://han.gl/VoRAW" width = 300 onclick = "go_calculator();" style="cursor: pointer">
+        <p class="des">위 사진을 누르면 내가 만든 <mark>계산기</mark>가 보여요.</p>
+        <video style="width:576px;" muted id="video-truck" class="video" autoplay controls>
+            <source src="video/truck.mp4" type="video/mp4">
+            해당 웹 브라우저는 동영상 요소를 지원할 수 없음
+        </video>
+        <p class="des">위에는 내가 3D프린터로 출력한 <mark>트럭</mark>이에요. 내가 직접 디자인했어요.</p>
+        <video style="width:576px;" controls>
+            <source src="video/songmaker_1.mp4" type="video/mp4">
+        </video>
+        <p>이건 내가 크롬 song maker로 만든 음악이에요.</p>
+    </body>
+</html>

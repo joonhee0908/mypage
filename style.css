@@ -1,0 +1,10 @@
+h1{border-width:4px;border-color:#ff0000;border-style:dashed;color:black;background-color:#ffff00;font-family:'맑은고딕','바탕체','돋움체';text-align:center;}
+body{font-family:sans-serif,"굴림",gulim,"돋움",dotum,arial,helvetica;}
+iframe{padding:10px 10px 10px 10px;}
+ul{text-align:center;}
+a{color:orange;font-family:'맑은고딕';}
+#web{color:#00ff00;}
+.des{color:purple;}
+#website{border-color:black;border-style:solid;margin-bottom:30px; color:black}
+#star{border:1px solid black;}
+p{text-align:center;}
