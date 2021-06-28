@@ -1,0 +1,58 @@
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <style>
+            body{background-color:#cacaca;}
+            #expression{width:815px; background-color:#ffffff; text-align:right;}
+            #formula{color:#909090; font-size:20px; height:20px; margin:0px 0px;}
+            #result{font-size:45px; height:75px; font-weight:lighter; font-family: "serif";}
+            td, input{width:200px; height:100px; font-size:30px;}
+            input[type="button"]{background-color:white; border:0; outline:0; transition: background-color ease 0.3s 0s;}
+            input[type="button"]:hover{background-color:#ddd;}
+            .colspan{width:404px;}
+            .rowspan{height:204px;}
+            #result{margin:0px 0px;}
+            #compute{background-color:#73a3c9 !important;}
+            #compute:hover{background-color:#3A8ED0 !important;;}
+            .operator{background-color:#ececec !important;}
+            .operator:hover{background-color:#e0e0e0 !important;}
+            .operator:active{background-color:#A5A6A8 !important;}
+            #compute:active{background-color:#0078D7 !important;}
+            .number:active{background-color:#A5A6A8 !important;}
+        </style>
+        <title>계산기</title>
+        <link rel="icon" href="favicon.svg" type="image/x-icon">
+        <meta charset = "UTF-8">
+    </head>
+    <body>
+        <div id="expression">
+            <p id="formula"></p><hr/>
+            <b><p id="result">0</p></b>
+        </div>
+        <table id="input">
+            <tr>
+                <td><input type="button" value="%" onclick="" class="operator"/></td><td><input  class="operator"type="button" value="CE" onclick="ClearEntry();"/></td><td><input type="button" value="C" onclick="AllClear();" class="operator"/></td><td><input type="button" value="←" onclick="Backspace();" class="operator"/></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="colspan"><input type="button" value="÷" class="colspan operator" onclick="input('÷')"></td><td><input type="button" value="×" class="operator" onclick="input('×')"></td><td><input type="button" value="-" onclick="input('-')" class="operator"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="input('7');" class="number"></td><td><input type="button" value="8" onclick="input('8');" class="number"></td><td><input type="button" value="9" onclick="input('9');" class="number"></td><td rowspan="2" class="rowspan"><input type="button" value="+" class="rowspan operator" onclick="input('+')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="input('4');" class="number"></td><td><input type="button" value="5" onclick="input('5');" class="number"></td><td><input type="button" value="6" onclick="input('6');" class="number"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" onclick="input('1');" class="number"></td><td><input type="button" value="2" onclick="input('2');" class="number"></td><td><input type="button" value="3" onclick="input('3');" class="number"></td><td rowspan="2" class="rowspan"><input type="button" value="=" onclick="compute();" class="rowspan operator" id="compute"></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="colspan"><input type="button" value="0" class="colspan number" onclick="input('0');"></td><td><input class="number" type="button" value="." onclick="input('.')""></td>
+            </tr>
+        </table>
+        <br>
+        <script src="calculator_js.js">
+        </script>
+        <script src="jquery.js"></script>
+    </body>
+</html>
