@@ -14,8 +14,8 @@
   </head>
   <body>
     <img src="../image/apple.svg"/>
-    <details open>
-      <summary>코드 보기</summary>
+    <details open id="apple_code">
+      <summary id="summary">코드 보기</summary>
       <p>&lt;?xml version="1.0" encoding="UTF-8"?&gt;<br>
  &lt;svg xmlns="http://www.w3.org/2000/svg" height="240"&gt;<br>
     &lt;g&gt;<br>
@@ -35,4 +35,9 @@
 &lt;/svg&gt;</p>
     </details>
   </body>
+  <script>
+    var apple_box=document.querySelector("#apple_code");
+    var apple_summary=document.querySelector("#summary");
+    apple_box.addEventListener("toggle", event => {if(apple_box.open){apple_summary.innerHTML="코드 숨기기";}else{apple_summary.innerHTML="코드 보기";})
+    </script>
 </html>
