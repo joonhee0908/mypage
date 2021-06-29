@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
- <svg xmlns="http://www.w3.org/2000/svg" height="240">
+ <svg xmlns="http://www.w3.org/2000/svg" height="250">
     <g>
         <!--사과 몸통-->
         <path d="M 50 200 Q 10 115 50 80 Q 80 60 110 80 A 10 10 0 0 0 130 80 Q 160 60 190 80 Q 230 115 190 200 Q 170 250 128 236 A 10 9 0 0 0 112 236 Q 70 250 50 200Z" fill="red" stroke="#9b0000" stroke-width="3"/>
