@@ -16,15 +16,15 @@ function input(input) {
             if (input == "×") {
                 formula_for_compute = formula_temporary + "*";
                 formula = formula_temporary + "×";
-            } else if(input == "÷") {
-                formula_for_compute = formula_temporary + "/";
-                formula = formula_temporary + "÷";
-            } else {
-                formula = formula_temporary + input;
+             } else if(input == "÷") {
+                 formula_for_compute = formula_temporary + "/";
+                 formula = formula_temporary + "÷";
+              } else {
+                   formula = formula_temporary + input;
             }
-            $("#formula").html(formula);
-        }
-        inputentry = "";
+        $("#formula").html(formula);
+    }
+    inputentry = "";
     } else if(input == ".") {
         if(inputentry.indexOf('.') == -1) {
             if(inputentry != "") {
@@ -32,15 +32,23 @@ function input(input) {
                 formula = formula_temporary + input;
                 compute_update(input, formula_temporary)
                 $("#formula").html(formula);
-                $("#result").html(inputentry);
+                $("#result").html(comma(inputentry));
+            } else {
+                inputentry = "0.";
+                formula = formula_temporary + "0" + input;
+                compute_update("0" + input, formula_temporary);
+                $("#formula").html(formula);
+                $("#result").html(comma(inputentry));
             }
         }
     }else {
-        formula = formula_temporary + input;
-        inputentry += input;
-        compute_update(input, formula_temporary)
-        $("#formula").html(formula);
-        $("#result").html(inputentry);
+        if(inputentry.length < 16 || function() {if(inputentry.indexOf(".") != -1 && inputentry.length < 17){return true;}}()) {
+            formula = formula_temporary + input;
+            inputentry += input;
+            compute_update(input, formula_temporary)
+            $("#formula").html(formula);
+            $("#result").html(comma(inputentry));
+        }
     }
     new_input = ""
 }
@@ -120,11 +128,33 @@ function Backspace() {
     if(inputentry == "") {
         $("#result").html("0")
     } else {
-        $("#result").html(inputentry);
+        $("#result").html(comma(inputentry));
     }
     new_input = "";
 }
 
 function compute_update(input, formula_temporary) {
     formula_for_compute = ((formula_temporary.replace(/×/g, "*")).replace(/÷/g, "/")).replace(/,/g, "") + input;
+}
+
+function insert(str, index, value) {
+    return str.slice(0, index) + value + str.slice(index);
+}
+
+function comma(inputentry) {
+    var back_of_decimal_point = "";
+    if(inputentry.indexOf('.') != -1) {back_of_decimal_point = inputentry.slice(inputentry.indexOf('.'))}
+    var inputentry_for_show;
+    if(inputentry.indexOf('.') == -1) {inputentry_for_show = inputentry;}else {inputentry_for_show = inputentry.slice(0, inputentry.indexOf('.'))}
+    var comma_amount = Math.floor((inputentry_for_show.length - 1) / 3);
+    for(i=1; i <= comma_amount; i++)
+    {
+        var insertindex = inputentry_for_show.length - (3 * i);
+        inputentry_for_show = insert(inputentry_for_show, insertindex, ',');
+    }
+    var comma_result = inputentry_for_show + back_of_decimal_point;
+    console.log(comma_result);
+    console.log(inputentry_for_show);
+    console.log(back_of_decimal_point);
+    return comma_result;
 }
